@@ -11,7 +11,7 @@
   }, {
     "id": 2,
     "bebida": "DRY Gin",
-    "nombre": "Heraclito y Macedonio Botanic",
+    "nombre": "Heraclito y Macedonio",
     "marca": "Lunfardo DDB",
     "ml": 750,
     "precioUnitario": 1290,
@@ -209,7 +209,7 @@
   }, {
     "id": 24,
     "bebida": "Dressing",
-    "nombre": "Dressing de Sauco, Cásis, frambuesa",
+    "nombre": "Dressing",
     "marca": "Müller & Wolf",
     "ml": 250,
     "precioUnitario": 385,
@@ -218,7 +218,7 @@
   }, {
     "id": 25,
     "bebida": "Dressing",
-    "nombre": "Dressing de Sauco, Cásis, frambuesa",
+    "nombre": "Dressing",
     "marca": "Müller & Wolf",
     "ml": 1000,
     "precioUnitario": 1380,
@@ -227,7 +227,7 @@
   }, {
     "id": 26,
     "bebida": "Néctar",
-    "nombre": "Néctar concentrado de flores de Sauco",
+    "nombre": "Néctar de flores de Sauco",
     "marca": "Müller & Wolf",
     "ml": 250,
     "precioUnitario": 460,
@@ -236,7 +236,7 @@
   }, {
     "id": 27,
     "bebida": "Néctar",
-    "nombre": "Néctar concentrado de flores de Sauco",
+    "nombre": "Néctar de flores de Sauco",
     "marca": "Müller & Wolf",
     "ml": 1000,
     "precioUnitario": 1700,

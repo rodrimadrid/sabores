@@ -83,12 +83,12 @@ function mostrarSeleccionC() {
 //funcion para crear productos
 function crearProducto(dato) {
   $("#contenedor").append(
-    `<div class="card" style="width:26.2em">
+    `<div class="card" >
                             <img class="card-img-top" style="width: 100%; height: 32.6em" src="${dato.img}" alt="Card image">
                             <div class="card-body">
                               <h4 class="card-title">${dato.marca}</h4>
                               <p class="card-text"><b>${dato.nombre} - ${dato.ml}ml</b> <br>
-                              Unidad $${dato.precioUnitario + ' / Unidad x Caja $' + dato.precioCaja}</p>
+                              Unidad $${dato.precioUnitario} <br>Unidad x Caja $${dato.precioCaja}</p>
                               <button id='${dato.id}' class="btn btn-primary btn-unidad">Agregar Unidad</button>
                               <button id='${dato.id}' class="btn btn-primary btn-caja">Agregar caja</button>
                             </div>
