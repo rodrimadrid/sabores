@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css\styles.css">
+  <link rel="stylesheet" href="css\bootstrap.min.css">
+  <title></title>
+</head>
+<body class="body">
+<!-- CARRITO  -->
+  <div id="mySidebar" class="sidebar" style="">
+    <a href="javascript:void(0)" class="closebtn btnCarrito">&times;</a>
+    <h2>Unidades</h2>
+
+    <div id="carrito" class="carrito">
+    </div>
+    <h2>Cajas</h2>
+    <div id="carrito2" class="carrito">
+
+    </div>
+    <div class="precio-total">
+    </div>
+    <button class="bg-dark cleanbtn" type="button" name="button">Limpiar Carrito</button>
+    <button class="bg-success buybtn" type="button" name="button">Realizar Compra</button>
+  </div>
+  <div id="main" >
+
+    <header class="header">
+
+    </header>
+    <div class="logo">
+      <img class="rounded-circle "style="width: 22em" src="images/sabores.jpg" alt="Sabores">
+      <div class="formularios">
+        <form class="myform" action="index.html" method="post">
+          <div class="form-group">
+            <label for="Buscar Producto">Buscar por Nombre: </label>
+            <input class="form-control first"type="text" name="Buscar Producto" placeholder="Nombre Producto">
+          </div>
+          <div class="form-group">
+            <label for="filtrar">Filtrar marcas: </label>
+            <select class="filtrar form-control" name="filtrar">
+              <option value="marcas" disabled selected>Marcas</option>
+              <option value="Lunfardo DDB">Lunfardo DDB</option>
+              <option value="Helmich">Helmich</option>
+              <option value="CARAJO">CARAJO</option>
+              <option value="Santa Quina">Santa Quina</option>
+              <option value="Desquiciado">Desquiciado</option>
+              <option value="ZONIA">ZONIA</option>
+              <option value="Müller & Wolf">Müller & Wolf</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="submit" name="Buscar" value="Buscar">
+            <input class="form-control" type="reset" name="reset" value="Resetear Busqueda">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="contenedor" class="card-columns m-3">
+    </div>
+  </div>
+  <script src="js/jquery.js"> </script>
+  <script src="js/bootstrap.bundle.min.js"> </script>
+  <script src="js/components.js"> </script>
+  <script src="js/main.js"> </script>
+</body>
+</html>
