@@ -1,5 +1,8 @@
 let seleccionUnitario = [];
 let seleccionCaja = [];
+//provincias API
+const APIPROVINCIAS = "https://apis.datos.gob.ar/georef/api/provincias"
+
 //funcion para mostrar productos
 function mostrarProductos(listado) {
   $("#contenedor").empty();
@@ -170,20 +173,72 @@ function limpiarCarrito() {
 }
 // boton para realizar compra
 function comprar(){
-  $('buybtn').click((e)=>{
-    $('contenedor').empty()
-    $('contenedor').append(`
-                            <form class="realizar-compra" action="index.html" method="post">
-                              <div class="form-group">
-                                <label for="Nombre">Nombre</label>
-                                <input class="form-control" type="text" name="Nombre">
-                                <label for="apellido">Apellido</label>
-                                <input class="form-control" type="text" name="apellido">
-                                <label for="email">Email</label>
-                                <input class="form-control" type="text" name="email" placeholder="email@ejemplo.com">
-                              </div>
-                            </form>
+  $('#btnCompra').click((e)=>{
+    $('#contenedor').empty()
+    $('#contenedor').css('column-count', '1')
+    $("#contenedor").append(`
+                              <form>
+                                <div class="form-row">
+                                <div class="form-group col-md-6">
+                                  <label for="inputNombre">Nombre</label>
+                                  <input type="text" class="form-control" id="inputNombre">
+                                </div>
+                                <div class="form-group col-md-6">
+                                  <label for="inputApellido">Apellido</label>
+                                  <input type="text" class="form-control" id="inputApellido">
+                                </div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="email">E-mail</label>
+                                  <input type="email" class="form-control" id="email" placeholder="Juankpo@ejemplo.com">
+                                </div>
+                                <div class="form-group">
+                                  <label for="inputDireccion">Direccion</label>
+                                  <input type="text" class="form-control" id="inputADireccion" placeholder="Calle, n°, Entre calles ">
+                                </div>
+                                <div class="form-row">
+                                  <div class="form-group col-md-6">
+                                    <label for="selectCiudad">Ciudad</label>
+                                    <select id="selectCiudad" class="form-control">
+                                      <option selected>Elegi tu Ciudad</option>
+                                      <option>...</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group col-md-6">
+                                    <label for="selectMuni">Municipio</label>
+                                    <select id="selectMuni" class="form-control">
+                                      <option selected>Elegi tu Municipio</option>
+                                      <option>...</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" for="gridCheck">
+                                      Quiero recibir las promociones
+                                    </label>
+                                  </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Enviar</button>
+                              </form>
                             `)
+                            $.get(APIPROVINCIAS, function(datos){
+                              $('#selectCiudad').empty()
+                              for (const provincia of datos.provincias) {
+                                $('#selectCiudad').append(`<option value='${provincia.id}'>${provincia.nombre}</option>`)
+                              }
+                            })
+                            $('#selectCiudad').change((e)=>{
+                              var apiMuni =  `https://apis.datos.gob.ar/georef/api/municipios?provincia=${$(e.target).val()}&campos=id,nombre&max=100`
+                              $.get(apiMuni, function(datos){
+                                $('#selectMuni').empty()
+                                for (const municipio of datos.municipios) {
+                                  $('#selectMuni').append(`<option value='${municipio.id}'>${municipio.nombre}</option>`)
+                                }
+                              })
+                            })
+
 })
 }
 //suma total de compra
@@ -270,6 +325,7 @@ function eventosForm(listado) {
   })
   //filtrado por selected
   $('.filtrar').change((e) => {
+    animar()
     let option = $(e.target).val();
     console.log(option)
 
@@ -300,6 +356,7 @@ function carritoToggle() {
     } else {
       closeNav();
       $('#contenedor').css('column-count', '3')
+      $(":reset").trigger('click')
     }
   })
 }

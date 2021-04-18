@@ -24,7 +24,6 @@ class PRODUCTO {
   getTotalC() {
     return (this.cantidadCaja * this.precioCaja)
   }
-
 }
 // eventos load y ready
 window.addEventListener('load', () => {
@@ -34,18 +33,18 @@ window.addEventListener('load', () => {
   $('.header').append(` <div class="animacion">
                         </div>`)
 
-  //feather.replace()
   carritoToggle();
   guardarCarrito();
+
 })
 $(document).ready(() => {
   spinner();
   limpiarCarrito();
+  comprar()
   // muestro productos con AJAX
   $.getJSON("data/productos.json", function(datos, status){
     mostrarProductos(datos);
     eventosForm(datos);
-
   })
 
 })

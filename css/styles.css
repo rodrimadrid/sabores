@@ -162,7 +162,11 @@ a.delete:hover {
   opacity: 0.8;
   text-align: center;
 }
-
+label{
+  color: white;
+}
 @media screen and (max-height: 450px) {
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 25px;}
+
+}
