@@ -147,7 +147,7 @@ function btnCaja(listado) {
                               <img style='height: 120px; width: 100px'src="${seleccionado.img}" alt="product image">
                                 <div class="producto__notif">
                                  <h6>${seleccionado.nombre}</h6><br>
-                                 <p>precio: $${seleccionado.precioCaja} <p>
+                                 <p>precio: $${seleccionado.precioCaja * 6} <p>
                                 </div>`)
     $('.animacion').animate({
         right: '15px'
