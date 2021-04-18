@@ -95,8 +95,8 @@
     "nombre": "Desquiciado - Malbec",
     "marca": "Desquiciado",
     "ml": 750,
-    "precioUnitario": 4356,
-    "precioCaja": 2613,
+    "precioUnitario": 550,
+    "precioCaja": 450.50,
     "img": "images/malbeec.jpg"
   }, {
     "id": 12,
@@ -104,8 +104,8 @@
     "nombre": " Desquiciado - Franc",
     "marca": "Desquiciado",
     "ml": 750,
-    "precioUnitario": 4356,
-    "precioCaja": 2613,
+    "precioUnitario": 550,
+    "precioCaja": 450.50,
     "img": "images/franc.jpg"
   }, {
     "id": 13,
@@ -113,8 +113,8 @@
     "nombre": " Desquiciado - Pinot Gris",
     "marca": "Desquiciado",
     "ml": 750,
-    "precioUnitario": 4356,
-    "precioCaja": 2613,
+    "precioUnitario": 550,
+    "precioCaja": 450.50,
     "img": "images/pinot noir.jpg"
   }, {
     "id": 14,
