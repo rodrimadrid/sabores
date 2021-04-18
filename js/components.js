@@ -169,13 +169,29 @@ function limpiarCarrito() {
   })
 }
 // boton para realizar compra
-
+function comprar(){
+  $('buybtn').click((e)=>{
+    $('contenedor').empty()
+    $('contenedor').append(`
+                            <form class="realizar-compra" action="index.html" method="post">
+                              <div class="form-group">
+                                <label for="Nombre">Nombre</label>
+                                <input class="form-control" type="text" name="Nombre">
+                                <label for="apellido">Apellido</label>
+                                <input class="form-control" type="text" name="apellido">
+                                <label for="email">Email</label>
+                                <input class="form-control" type="text" name="email" placeholder="email@ejemplo.com">
+                              </div>
+                            </form>
+                            `)
+})
+}
 //suma total de compra
 function precioFinal() {
 
   $(".precio-total").empty()
   $(".precio-total").append(`
-                                <span>Precio total: $${sumaFinalU() + sumaFinalC()} </span>
+                                <span>Precio total: $${(sumaFinalU() + sumaFinalC()).toFixed(2)} </span>
                               `)
 
 
