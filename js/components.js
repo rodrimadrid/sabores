@@ -177,7 +177,7 @@ function comprar(){
     $('#contenedor').empty()
     $('#contenedor').css('column-count', '1')
     $("#contenedor").append(`
-                              <form>
+                              <form id='formCompra'>
                                 <div class="form-row">
                                 <div class="form-group col-md-6">
                                   <label for="inputNombre">Nombre</label>
@@ -238,7 +238,7 @@ function comprar(){
                                 }
                               })
                             })
-
+                            scroll()
 })
 }
 //suma total de compra
@@ -359,4 +359,9 @@ function carritoToggle() {
       $(":reset").trigger('click')
     }
   })
+}
+//scroll animado
+function scroll(){
+return    $('html, body').animate({
+            scrollTop: $('#formCompra').offset().top}, 2000);
 }
