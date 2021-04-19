@@ -2,7 +2,6 @@ let seleccionUnitario = [];
 let seleccionCaja = [];
 //provincias API
 const APIPROVINCIAS = "https://apis.datos.gob.ar/georef/api/provincias"
-
 //funcion para mostrar productos
 function mostrarProductos(listado) {
   $("#contenedor").empty();
