@@ -175,6 +175,12 @@ function comprar(){
   $('#btnCompra').click((e)=>{
     $('#contenedor').empty()
     $('#contenedor').css('column-count', '1')
+    if ((seleccionUnitario.length == 0) && (seleccionCaja.length == 0)) {
+      $("#contenedor").append(`
+                              <div class='not-found'>
+                                <h2 style='color: black'>NO AGREGASTE PRODUCTOS</h2>
+                              </div>`)
+    }else {
     $("#contenedor").append(`
                               <form id='formCompra'>
                                 <div class="form-row">
@@ -238,6 +244,7 @@ function comprar(){
                               })
                             })
                             scroll()
+      }
 })
 }
 //suma total de compra
