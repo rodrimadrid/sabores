@@ -1,6 +1,6 @@
 //sumar prpoducto
 function sumarU(){
-$('.plus').click((e)=>{
+$('.plusU').click((e)=>{
   let sumar = seleccionUnitario.find(producto => producto.id == e.target.id);
   sumar.cantidadUnitaria ++;
   mostrarSeleccionU();
@@ -9,7 +9,7 @@ $('.plus').click((e)=>{
 }
 //sumar prpoducto
 function sumarC(){
-$('.plus').click((e)=>{
+$('.plusC').click((e)=>{
   let sumar = seleccionCaja.find(producto => producto.id == e.target.id);
   sumar.cantidadCaja ++;
   mostrarSeleccionC();
@@ -18,7 +18,7 @@ $('.plus').click((e)=>{
 }
 //eliminar producto del carrito
 function eliminarU(){
-  $('.delete').click((e) => {
+  $('.deleteU').click((e) => {
     console.log(e.target.id)
     var removeU = seleccionUnitario.find(producto => producto.id == e.target.id);
     const indexU = seleccionUnitario.indexOf(removeU)
@@ -36,7 +36,7 @@ function eliminarU(){
 }
 //evento para eliminar producto del carrito2
 function eliminarC(){
-  $('.delete').click((e) => {
+  $('.deleteC').click((e) => {
     e.preventDefault();
     var removeC = seleccionCaja.find(producto => producto.id == e.target.id);
     let indexC = seleccionCaja.indexOf(removeC);

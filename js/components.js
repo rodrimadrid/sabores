@@ -23,8 +23,8 @@ function mostrarSeleccionU() {
                               <img class='carrito-img' src="${dato.img}" alt="product image">
                               <h6  class="carrito-h6">Cantidad: ${dato.cantidadUnitaria}<br><br>precio: $${parseInt((dato.cantidadUnitaria * dato.precioUnitario).toFixed(2))} </h6>
                               <div class='botones'>
-                                <button class="btn btn-success plus"type="button" id='${dato.id}'>+</button>
-                                <button class="btn btn-danger delete"type="button" id='${dato.id}'>-</button>
+                                <button class="btn btn-success plusU"type="button" id='${dato.id}'>+</button>
+                                <button class="btn btn-danger deleteU"type="button" id='${dato.id}'>-</button>
                               </div>
                              </div>
                           </div>`)
@@ -45,8 +45,8 @@ function mostrarSeleccionC() {
                               <img class='carrito-img'src="${dato.img}" alt="product image">
                               <h6  class="carrito-h6">Cantidad: ${dato.cantidadCaja}<br><br>precio: $${parseInt((dato.cantidadCaja * dato.precioCaja).toFixed(2))} </h6>
                               <div class='botones'>
-                                <button class="btn btn-success plus"type="button" id='${dato.id}'>+</button>
-                                <button class="btn btn-danger delete"type="button" id='${dato.id}'>-</button>
+                                <button class="btn btn-success plusC"type="button" id='${dato.id}'>+</button>
+                                <button class="btn btn-danger deleteC"type="button" id='${dato.id}'>-</button>
                               </div>
                              </div>
                           </div>`)
