@@ -74,15 +74,22 @@ function crearProducto(dato) {
 
 
 // boton para realizar pedido
-function comprar(){
+function comprar(listado){
   $('#btnCompra').click((e)=>{
     $('#contenedor').empty()
     $('#contenedor').css('column-count', '1')
     if ((seleccionUnitario.length == 0) && (seleccionCaja.length == 0)) {
       $("#contenedor").append(`
                               <div class='not-found'>
-                                <h2 style='color: black'>NO AGREGASTE PRODUCTOS</h2>
-                              </div>`)
+                                <h2 style='color: black; margin-bottom: 1.4em'>NO AGREGASTE PRODUCTOS</h2>
+                                <button type="button" class="btn btn-primary reset">Agregar Productos</button>
+                              </div>
+                              `)
+                              scroll('.not-found')
+                              $(".reset").click((e)=>{
+                                $('#contenedor').empty()
+                                mostrarProductos(listado)
+                              })
     }else {
     $("#contenedor").append(`
                               <form id='formCompra'>
@@ -146,7 +153,7 @@ function comprar(){
                                 }
                               })
                             })
-                            scroll()
+                            scroll('#formCompra')
       }
 })
 }
@@ -241,7 +248,7 @@ function carritoToggle() {
   })
 }
 //scroll animado
-function scroll(){
+function scroll(selector){
 return    $('html, body').animate({
-            scrollTop: $('#formCompra').offset().top}, 2000);
+            scrollTop: $(selector).offset().top}, 2000);
 }

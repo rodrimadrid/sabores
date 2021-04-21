@@ -40,11 +40,12 @@ window.addEventListener('load', () => {
 $(document).ready(() => {
   spinner();
   limpiarCarrito();
-  comprar()
   // muestro productos con AJAX
   $.getJSON("data/productos.json", function(datos, status){
     mostrarProductos(datos);
     eventosForm(datos);
+    comprar(datos)
+
   })
 
 })

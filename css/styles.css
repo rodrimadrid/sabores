@@ -83,11 +83,7 @@ a.closebtn:hover {
   height: 100px;
   width: 60px;
 }
-.delete{
 
-  margin: auto;
-
-}
 a.delete:hover {
   text-decoration: none;
   color: red;
